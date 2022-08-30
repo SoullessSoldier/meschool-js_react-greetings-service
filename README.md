@@ -15,3 +15,16 @@
 - Научимся добавлять события в React
 - Напишем сервис для работы с API
 - Выгрузим проект на хостинг
+
+#### Day1 ####
+**Развернем React-проект и по макету сверстаем сайт**
+
+макет Figma\
+Node.js 16+\
+create react App\
+fonts.zip
+normalize.css
+
+```
+npx create-react-app .
+```
