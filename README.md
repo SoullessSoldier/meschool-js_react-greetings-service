@@ -22,7 +22,7 @@
 макет Figma\
 Node.js 16+\
 create react App\
-fonts.zip
+fonts.zip\
 normalize.css
 
 ```

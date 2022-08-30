@@ -1,8 +1,8 @@
 import style from './CardImage.module.css'
 
-const CardImage = () => (
+const CardImage = (props) => (
     <div className={style.image}>
-        <img classname={style.img} src="" alt="Фон поздравления"/>
+        <img className={style.img} src={props.img_src} alt="Фон поздравления"/>
     </div>
 );
 
