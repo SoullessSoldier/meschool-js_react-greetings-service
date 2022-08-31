@@ -29,6 +29,9 @@
   background-color: #00C78B;
   color: #ffffff;
 }
+.button:hover {
+  background-color: #02d673;
+}
 
 @media (max-width: 1024px){
     .wrapper{

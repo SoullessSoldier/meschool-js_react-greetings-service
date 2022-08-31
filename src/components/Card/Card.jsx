@@ -8,8 +8,10 @@ const Card = (props) => (
   <Container>
     <div className={style.card}>
       <div className={style.wrapper}>
-        <CardImage img_src={props.img_src}/>
-        <CardFelicitation text={props.text} />
+        <div className={style.image}>
+          <CardImage img_src={props.img_src} />
+          <CardFelicitation text={props.text} />
+        </div>
       </div>
     </div>
   </Container>
