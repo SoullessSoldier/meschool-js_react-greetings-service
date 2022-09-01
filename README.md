@@ -33,3 +33,17 @@ npx create-react-app .
 Интерактив, выпадающее меню\
 Работа с состоянием, контекстом и хуки
 
+#### Day3 ####
+Работа с API
+```
+https://vanilla-legend-factory.glitch.me/api/
+GET /api - получить список праздников
+GET /api/text/{title_holiday} - получить случайный текст к празднику
+GET /api/image/{title_holiday} - получить случайное изображение к празднику
+```
+
+hygen\
+*npm i hygen -D*
+
+
+

@@ -6,7 +6,7 @@ const CardImage = (props) => {
     const img = useContext(imgContext);
     console.log(img)
     return (
-        <img className={style.img} src={props.img_src} alt="Фон поздравления"/>
+        <img className={style.img} src={img.img} alt="Фон поздравления"/>
     )    
 };
 
