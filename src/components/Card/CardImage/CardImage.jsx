@@ -1,13 +1,14 @@
+import React from 'react';
 import { useContext } from 'react';
 import { imgContext } from '../../../context/imgContext';
-import style from './CardImage.module.css';
+import CardBG from '../../../img/card-bg.jpg'
 
-const CardImage = (props) => {
-    const img = useContext(imgContext);
-    console.log(img)
+const CardImage = () => {
+    const {urlImg} = useContext(imgContext);
+    
     return (
-        <img className={style.img} src={img.img} alt="Фон поздравления"/>
-    )    
+        <img src={urlImg || CardBG} alt="Фон поздравления"/>
+    );    
 };
 
 export default CardImage;

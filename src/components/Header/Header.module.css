@@ -32,6 +32,9 @@
 .button:hover {
   background-color: #02d673;
 }
+.button:disabled{
+  background-color: #bebebe;
+}
 
 @media (max-width: 1024px){
     .wrapper{

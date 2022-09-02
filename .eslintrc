@@ -1,0 +1,7 @@
+{
+    "extends": ["plugin:react/jsx-runtime"]
+  
+  "parserOptions": {
+    "sourceType": "module"
+}
+}

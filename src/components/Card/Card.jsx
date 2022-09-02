@@ -1,3 +1,4 @@
+import React from 'react';
 import CardImage from "./CardImage/CardImage";
 import CardFelicitation from "./CardFelicitation/CardFelicitation";
 import Container from "../Container/Container";
@@ -9,7 +10,7 @@ const Card = (props) => (
     <div className={style.card}>
       <div className={style.wrapper}>
         <div className={style.image}>
-          <CardImage img_src={props.img_src} />
+          <CardImage />
           <CardFelicitation text={props.text} />
         </div>
       </div>

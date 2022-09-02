@@ -45,5 +45,15 @@ GET /api/image/{title_holiday} - получить случайное изобр�
 hygen\
 *npm i hygen -D*
 
+#### Day4 ####
+Redux-toolkit\
+Redux / собираем context в state\
+Смена текста поздравления\
+
+```
+npm install @reduxjs/toolkit
+npm i react-redux
+```
+
 
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import Container from '../Container/Container';
 import style from './Footer.module.css';
 import { ReactComponent as VKIcon } from '../../img/vk.svg';

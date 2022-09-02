@@ -1,12 +1,16 @@
-import { createContext, useContext } from "react";
-import { useText } from "../hooks/useText";
-import { holidaysContext } from "./holidayContext";
+import React from 'react';
+import { createContext } from "react";
+//import { holidaysContext } from "./holidayContext";
+import { URI_API } from "../const/const";
+import { useFetch } from "../hooks/useFetch";
+import { useSelector } from 'react-redux';
 
 export const textContext = createContext({});
 
 export const TextContextProvider = ({children}) => {
-    const {holiday} = useContext(holidaysContext);
-    const [text] = useText(holiday);
+    //const {holiday} = useContext(holidaysContext); 
+    const holiday = useSelector(state => state.holidays.holiday); 
+    const [{text}] = useFetch(holiday ? `${URI_API}text/${holiday}` : ''); 
     return (
         <textContext.Provider value={{text}}>
             {children}

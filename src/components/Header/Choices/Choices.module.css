@@ -25,12 +25,13 @@
 }
 
 .item {
-    line-height: 36px;
+  line-height: 36px;
+  font-weight: 700;
   cursor: pointer;
   margin-bottom: 10px;
 }
-.item:last-child{
-    margin-bottom: 0;
+.item:last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 1024px) {
