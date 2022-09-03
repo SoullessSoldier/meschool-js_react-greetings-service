@@ -5,6 +5,7 @@ import style from "./Choices.module.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { setHoliday, fetchHolidays } from '../../../store/holidaysSlice.js'; 
 import { fetchText } from '../../../store/textSlice.js'; 
+import { fetchImage } from '../../../store/imageSlice.js'; 
 
 const Choices = () => {
   const [isOpenChoices, setIsOpenChoices] = useState(false);
@@ -41,6 +42,7 @@ const Choices = () => {
                 //changeHoliday(item[0]);
                 dispatch(setHoliday(item[0]));
                 dispatch(fetchText(item[0]));
+                dispatch(fetchImage(item[0]));
                 toggleChoices();
               }}
             >

@@ -46,9 +46,11 @@ hygen\
 *npm i hygen -D*
 
 #### Day4 ####
+Замена контекст-провайдеров на хранилище состояния **redux**\
 Redux-toolkit\
 Redux / собираем context в state\
 Смена текста поздравления\
+Смена фона поздравления\
 
 ```
 npm install @reduxjs/toolkit

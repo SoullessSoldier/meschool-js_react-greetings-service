@@ -5,7 +5,7 @@ import Card from "./components/Card/Card";
 
 import BGCard from "./img/card-bg.jpg";
 //import { TextContextProvider } from "./context/textContext";
-import { ImgContextProvider } from "./context/imgContext";
+//import { ImgContextProvider } from "./context/imgContext";
 //import { HolidaysContextProvider } from "./context/holidayContext";
 
 const wrapper = {
@@ -18,13 +18,13 @@ const App = () => {
   return (
     <div style={wrapper}>
       {/* <HolidaysContextProvider> */}
-        <ImgContextProvider>
+        {/* <ImgContextProvider> */}
           {/* <TextContextProvider> */}
             <Header />
             <Card img_src={BGCard} />
             <Footer />
           {/* </TextContextProvider> */}
-        </ImgContextProvider>
+        {/* </ImgContextProvider> */}
       {/* </HolidaysContextProvider> */}
     </div>
   );
