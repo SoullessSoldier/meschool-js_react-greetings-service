@@ -7,30 +7,48 @@ export const fetchImage = createAsyncThunk("image/fetchImage", async (holiday) =
   return data;
 });
 
+export const fetchImageId = createAsyncThunk("image/fetchImageId", async (id) => {
+  const res = await fetch(`${URI_API}image/${id}`);
+  const data = await res.json();
+  return data;
+});
+
 const imageSlice = createSlice({
   name: "image",
   initialState: {
     image: "",
-    id: "",
+    idImage: "",
     loading: "",
   },
   reducers: {},
   extraReducers: {
     [fetchImage.pending]: (state) => {
-      state.loading = "loading";
-      state.id = "";
-      state.image = "";
+      state.loading = "loading";      
     },
     [fetchImage.fulfilled]: (state, action) => {
       state.loading = "success";
-      state.id = action.payload.idImg;
+      state.idImage = action.payload.idImg;
       state.image = action.payload.urlImg;
       
     },
     [fetchImage.rejected]: (state) => {
       state.loading = "fail";
       state.image = "";
-      state.id = "";
+      state.idImage = "";
+    },
+    [fetchImageId.pending]: (state) => {
+      state.loading = "loading";      
+    },
+    [fetchImageId.fulfilled]: (state, action) => {
+      state.loading = "success";
+      state.idImage = action.payload.idImg;
+      state.image = action.payload.urlImg;
+      
+    },
+    [fetchImageId.rejected]: (state) => {
+      state.loading = "fail";
+      state.image = "";
+      state.idimage = "";
     },
   },
 });

@@ -1,36 +1,42 @@
-import React from 'react';
+import React from "react";
 import { useState, useEffect } from "react";
 import style from "./Choices.module.css";
 //import { holidaysContext } from "../../../context/holidayContext";
-import { useSelector, useDispatch } from 'react-redux';
-import { setHoliday, fetchHolidays } from '../../../store/holidaysSlice.js'; 
-import { fetchText } from '../../../store/textSlice.js'; 
-import { fetchImage } from '../../../store/imageSlice.js'; 
+import { useSelector, useDispatch } from "react-redux";
+import { fetchHolidays } from "../../../store/holidaysSlice.js";
+import { fetchText } from "../../../store/textSlice.js";
+import { fetchImage } from "../../../store/imageSlice.js";
+import { NavLink, useParams } from "react-router-dom";
 
 const Choices = () => {
   const [isOpenChoices, setIsOpenChoices] = useState(false);
   //const { holidays, holiday, changeHoliday } = useContext(holidaysContext);
-  const { holiday, holidays, loading } = useSelector(state => state.holidays);
+  const { holidays, loading } = useSelector((state) => state.holidays);
   const dispatch = useDispatch();
   //const { holidays } = useContext(holidaysContext);
+  const {holiday} = useParams();
 
   const toggleChoices = () => {
-    if (loading !== 'success') return;
+    if (loading !== "success") return;
     setIsOpenChoices(!isOpenChoices);
   };
 
   useEffect(() => {
     dispatch(fetchHolidays());
-  }, [dispatch]);
+    if(holiday) {
+      dispatch(fetchText(holiday));
+      dispatch(fetchImage(holiday));
+    }
+  }, [dispatch, holiday]);
 
   /*const holiday = useContext(holidaysContext);
   console.log("holiday: ", holiday);*/
   return (
     <div className={style.wrapper}>
       <button className={style.button} onClick={toggleChoices}>
-        {loading !== 'success' ?
-        'Загрузка...' :
-         holidays[holiday] || "Выбрать праздник"}
+        {loading !== "success"
+          ? "Загрузка..."
+          : holidays[holiday] || "Выбрать праздник"}
       </button>
       {isOpenChoices && (
         <ul className={style.list}>
@@ -40,13 +46,18 @@ const Choices = () => {
               key={item[0]}
               onClick={() => {
                 //changeHoliday(item[0]);
-                dispatch(setHoliday(item[0]));
-                dispatch(fetchText(item[0]));
-                dispatch(fetchImage(item[0]));
+                //dispatch(setHoliday(item[0]));
+                //dispatch(fetchText(item[0]));
+                //dispatch(fetchImage(item[0]));
                 toggleChoices();
               }}
             >
-              {item[1]}
+              <NavLink
+                to={`card/${item[0]}`}
+                className={({ isActive }) => (isActive ? style.linkActive : "")}
+              >
+                {item[1]}
+              </NavLink>
             </li>
           ))}
         </ul>

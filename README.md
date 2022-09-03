@@ -40,6 +40,9 @@ https://vanilla-legend-factory.glitch.me/api/
 GET /api - получить список праздников
 GET /api/text/{title_holiday} - получить случайный текст к празднику
 GET /api/image/{title_holiday} - получить случайное изображение к празднику
+GET /api/text/{id} - получить поздравление по его ID
+GET /api/image/{id} - получить поздравление по его ID
+GET /api/{id} - получить поздравление по его ID
 ```
 
 hygen\
@@ -56,6 +59,18 @@ Redux / собираем context в state\
 npm install @reduxjs/toolkit
 npm i react-redux
 ```
+
+#### Day5 ####
+Функционал "Поделиться открыткой"\
+Завершаем проект и деплоим\
+[react-router v6](https://reactrouter.com/)
+```
+npm i react-router-dom@6
+```
+Сервис [vercel.com](vercel.com) для деплоя реакт-проекта с Гитхаба
+
+TODO - прикрутить генерацию картинки из открытки с текстом.
+
 
 
 

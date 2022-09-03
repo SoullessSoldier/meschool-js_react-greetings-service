@@ -34,6 +34,10 @@
   margin-bottom: 0;
 }
 
+.linkActive{
+  color: #9a66ff
+}
+
 @media (max-width: 1024px) {
   .wrapper {
     flex-direction: column;
@@ -42,6 +46,16 @@
     width: 220px;
     height: 45px;
     font-size: 14px;
+  }
+  .list{
+    width: 220px;
+    top: 48px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .item{
+    line-height: 30px;
+    margin-bottom: 5px;
   }
 }
 

@@ -56,9 +56,10 @@ function getTextId(itemId) {
 
   for (const key in textObj) {
     if (Object.hasOwnProperty.call(textObj, key)) {
-      const arr = textObj[key];
+      const arr = textObj[key];      
+
       for (const obj of arr) {
-        if (obj.idText === itemId) {
+        if (obj.id === itemId) {
           item = obj;
           break;
         }

@@ -1,32 +1,19 @@
-import React from 'react';
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import React from "react";
+import Layout from "./components/Layout/Layout";
 import Card from "./components/Card/Card";
+import EmptyCard from "./components/EmptyCard/EmptyCard";
 
-import BGCard from "./img/card-bg.jpg";
-//import { TextContextProvider } from "./context/textContext";
-//import { ImgContextProvider } from "./context/imgContext";
-//import { HolidaysContextProvider } from "./context/holidayContext";
-
-const wrapper = {
-  display: "flex",
-  flexDirection: "column",
-  height: "100vh",
-};
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <div style={wrapper}>
-      {/* <HolidaysContextProvider> */}
-        {/* <ImgContextProvider> */}
-          {/* <TextContextProvider> */}
-            <Header />
-            <Card img_src={BGCard} />
-            <Footer />
-          {/* </TextContextProvider> */}
-        {/* </ImgContextProvider> */}
-      {/* </HolidaysContextProvider> */}
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<EmptyCard />} />
+        <Route path="card/:holiday" element={<Card />} />
+      </Route>
+      <Route path='singleCard/:idText/:idImage' element={<Card />} />
+    </Routes>
   );
 };
 
